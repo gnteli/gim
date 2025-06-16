@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Multiplane Camera</title>
+		<style>
+			body {
+				margin: 0;
+				background-color: rgb(0, 0, 0);
+			}
+			main {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				min-height: 100dvh;
+			}
+			#container {
+				display: grid;
+				place-items: center;
+				transform-style: preserve-3d;
+				perspective: 3000px;
+
+			}
+			.layer {
+				display: inline-block;
+				grid-area: 1/1/1/1;
+				user-select: none;
+				pointer-events: none;
+				/* border: 1px solid white; */
+				width: min(75vw, 75vh);
+			}
+			.layer img {
+				width: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+		 	<div id="container">
+				<div style="translate: 0 0 -200px;" class="layer"><img src="img/1.png"></div>
+				<div style="translate: 0 0  -100px;" class="layer"><img src="img/2.png"></div>
+				<div style="translate: 0 0    0px;" class="layer"><img src="img/3.png"></div>
+				<div style="translate: 0 0   100px;" class="layer"><img src="img/4.png"></div>
+			</div>
+		</main>
+		<script>
+			let rotateX = 0;
+		    let rotateY = 0;
+			let scale = 1;
+			document.body.addEventListener('mousemove', (e) => {
+			const x = (e.clientX - window.innerWidth / 2) / window.innerWidth * Math.PI * 0.75;
+			const y = -(e.clientY - window.innerHeight / 2) / window.innerHeight * Math.PI * 0.75;
+			rotateX = y;
+			rotateY = x;
+	updateTransform();
+	document.body.addEventListener('wheel', (e) => {
+	e.preventDefault();
+	const zoomSpeed = 0.001; // più piccolo = più fluido
+	scale = Math.min(Math.max(scale - e.deltaY * zoomSpeed, 0.3), 3); // Limita lo zoom
+	updateTransform();
+}, { passive: false });
+
+});
+    function updateTransform() {
+	container.style.transform = `rotateX(${rotateX}rad) rotateY(${rotateY}rad) scale(${scale})`;
+}
+			
+		</script>
+	</body>
+</html>
