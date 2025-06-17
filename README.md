@@ -21,5 +21,15 @@ Corso Grafica in movimento 2025 SUPSI
 - [Parallasse animato](https://gnteli.github.io/gim/Esercizio_2/index_animato.html)
 - [Parallasse interattivo](https://gnteli.github.io/gim/Esercizio_2/index_interattivo.html)
 
-## Esercizio 3
-- [Animazione della neve](https://gnteli.github.io/gim/Esercizio_3A_neve/index.html)
+## Esercizio 3A
+- [Neve](https://gnteli.github.io/gim/Esercizio_3A_neve/index.html)
+- [Pioggia](https://gnteli.github.io/gim/Esercizio_3A_pioggia/index.html)
+- [Pong](https://gnteli.github.io/gim/Esercizio_3A_pong/index.html)
+- [Pong Interattivo](https://gnteli.github.io/gim/Esercizio_3A_pong_interattivo/index.html)
+
+## Esercizio 3B
+- [Orologio Digitale](https://gnteli.github.io/gim/Esercizio_3B_orologio_digitale/index.html)
+- [Orologio Digitale Velocizzato](https://gnteli.github.io/gim/Esercizio_3B_orologio_digitale_velocizzato/index.html)
+
+
+
